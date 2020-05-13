@@ -19,6 +19,12 @@ a:hover {
 ul{
   list-style-type: none;
 }
+.titolo {
+  color: white;
+}
+.sottotitolo {
+  color: grey;
+}
 /* FINE REGOLE GENERALI */
 
 /* INIZIO MAIN */
@@ -122,24 +128,73 @@ ul{
 .col-dx .nav {
   height: 80px;
   text-align: right;
-  background-color: #080b12;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 170px;
+  right: 0;
+}
+.col-dx .nav button {
+  margin-right: 20px;
+  margin-top: 25px;
+  padding: 5px 30px;
+  border-radius: 20px;
+  background-color: inherit;
+}
+.col-dx .nav button:hover {
+  transform: scale(1.1);
 }
 .col-dx .nav a {
-  color: white;
-  padding: 5px 30px;
-  line-height: 80px;
-  border-radius: 20px;
-  border: 1px solid white;
-  margin-right: 20px;
-}
-.col-dx .nav a:hover {
-/* NOTE: mettere transform scale */
+  font-size: 16px;
 }
 .col-dx .content {
+  padding-top: 80px;
   color: white;
   overflow-y: auto;
   background-color: #141923;
-  height: calc(100vh - 150px);
+  height: calc(100vh - 70px);
+}
+.col-dx .content .nav-content ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.col-dx .content .nav-content li {
+  display: inline-block;
+  margin: 20px;
+  font-size: 14px;
+  padding: 5px;
+}
+.col-dx .content .nav-content li:first-of-type {
+  border-bottom: 2px solid green;
+}
+.col-dx .content h2 {
+  padding: 25px 0 0 10px;
+}
+.col-dx .content h4 {
+  padding: 5px 0 0 10px;
+}
+.col-dx .content .box .titolo ,
+.col-dx .content .box .sottotitolo {
+  padding: 5px 0;
+}
+.row-content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.row-content .box {
+  text-align: center;
+
+}
+.row-content .box img {
+  width: 180px;
+  height: 180px;
+  padding: 10px;
+}
+.row-content:last-of-type .box img {
+  border-radius: 50%;
 }
 /* inizio col-dx */
 /* FINE MAIN */
@@ -147,18 +202,138 @@ ul{
 /* INIZIO FOOTER */
 footer {
   height: 70px;
-  background-color: #282828;
-  z-index: 100;
+  background-color: rgba(41, 41, 41, 1);
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-footer > * {
+/* inizio sx */
+.sx {
+  display: flex;
+  padding-left: 10px;
+  align-items: center;
+}
+.sx li {
+ font-size: 12px;
+}
+.sx img {
+  height: 40px;
+  padding-right: 3px;
+}
+.sx ul:last-of-type li {
+  font-size: 18px;
+  padding-left: 10px;
+}
+/* inizio sx */
+
+/* inizio center */
+.center {
+  flex-grow: 2;
+}
+.center .top-player {
+  display: flex;
+  justify-content: center;
+}
+.center li {
+  display: inline-block;
+  padding: 0 10px;
+}
+.center li:nth-child(3) {
+  font-size: 30px;
+  vertical-align: middle;
+}
+.center li:nth-child(3):hover {
+  transform: scale(1.2);
+}
+.center li i {
+  color: white;
+}
+.center .bot-player {
+  display: flex;
+  justify-content: center;
+  font-size: 10px;
+  color: white;
+}
+.center .bot-player .riga-player {
+  margin: 0 10px;
+  align-self: center;
+  height: 0;
+  width: 70%;
+  border: 2px solid grey;
+  border-radius: 2px;
+  position: relative;
 
 }
-footer {
-  
+.center .bot-player .riga-player span {
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  height: 0px;
+  width: 12%;
+  border: 2px solid white;
+  border-radius: 2px;
 }
+.center .bot-player .riga-player:hover span {
+    border-color: lightgreen;
+}
+.center .bot-player .riga-player:hover span::after {
+  content: '';
+  border: 7px solid white;
+  border-radius: 50%;
+  position: absolute;
+  top: -7px;
+  right: -10px;
+  height: 0px;
+}
+.center .bot-player .riga-player:hover {
+  cursor: pointer;
+
+}
+/* fine center */
+
+/* inizio dx */
+.dx {
+  padding-right: 10px;
+}
+.dx * {
+  display: inline-block;
+}
+.dx li {
+  display: inline-block;
+}
+.dx li i {
+  font-size: 10px;
+}
+.dx .riga-volume {
+  height: 0px;
+  vertical-align: middle;
+  width: 80px;
+  border: 2px solid grey;
+  border-radius: 2px;
+  position: relative;
+}
+.dx .riga-volume span {
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  height: 0px;
+  width: 30px;
+  border: 2px solid white;
+  border-radius: 2px;
+}
+.dx .riga-volume:hover span {
+    border-color: lightgreen;
+}
+.dx .riga-volume:hover span::after {
+  content: '';
+  border: 7px solid white;
+  border-radius: 50%;
+  position: absolute;
+  top: -7px;
+  right: -10px;
+  height: 0px;
+}
+/* fine dx */
 /* FINE FOOTER */
 
 
@@ -175,6 +350,9 @@ footer {
   }
   .col-dx{
     width: calc(100% - 60px);
+  }
+  .col-dx .nav {
+    left: 60px;
   }
 }
 /* FINE MEDIA QUERY */
