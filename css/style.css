@@ -91,10 +91,18 @@ ul{
   margin-top: 10px;
   padding-left: 10px;
 }
+.col-sx-md > p {
+  padding-top: 10px;
+}
+.col-sx-md > p i {
+  vertical-align: middle;
+  font-size: 31px;
+  padding:0 5px 0 10px;
+}
 .col-sx-md .playlist {
   overflow-y: auto;
   width: 100%;
-  height: calc(100vh - 377px);/* NOTE: da modificare quando do altezza con altre cose */
+  height: calc(100vh - 417px);/* NOTE: da modificare quando do altezza con altre cose */
 }
 .col-sx-md .playlist li:last-child {
   width: 100%;
@@ -161,13 +169,19 @@ ul{
   justify-content: center;
 }
 .col-dx .content .nav-content li {
+  position: relative;
   display: inline-block;
   margin: 20px;
   font-size: 14px;
   padding: 5px;
 }
-.col-dx .content .nav-content li:first-of-type {
-  border-bottom: 2px solid green;
+.col-dx .content .nav-content li:first-of-type span {
+  border: 1px solid lightgreen;
+  height: 0;
+  position: absolute;
+  top: 100%;
+  left: 30%;
+  width: 40px;
 }
 .col-dx .content h2 {
   padding: 25px 0 0 10px;
@@ -186,14 +200,43 @@ ul{
 }
 .row-content .box {
   text-align: center;
-
+}
+.row-content .box .img{
+  position: relative;
+  width: 180px;
+  height: 180px;
 }
 .row-content .box img {
   width: 180px;
   height: 180px;
   padding: 10px;
+  cursor: pointer;
 }
 .row-content:last-of-type .box img {
+  border-radius: 50%;
+}
+/* per hover su img */
+.row-content .hover-play {
+  display: none
+}
+.row-content .img:hover .hover-play {
+  width: 160px;
+  height: 160px;
+  display: inherit;
+  position: absolute;
+  font-size: 50px;
+  transform: translate(-50% , -50%);
+  top: 50%;
+  left: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.row-content .img:hover .hover-play i{
+  position: absolute;
+  transform: translate(-50% , -50%);
+  top: 50%;
+  left: 50%;
+}
+.row-content:last-of-type .img:hover .hover-play {
   border-radius: 50%;
 }
 /* inizio col-dx */
@@ -336,7 +379,6 @@ footer {
 /* fine dx */
 /* FINE FOOTER */
 
-
 /* INIZIO MEDIA QUERY */
 @media screen and (max-width: 552px) {
   .col-sx-md  {
@@ -355,4 +397,5 @@ footer {
     left: 60px;
   }
 }
+
 /* FINE MEDIA QUERY */
