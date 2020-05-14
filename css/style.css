@@ -1,8 +1,10 @@
+/* INIZIO RESET */
 * {
   padding: 0;
   margin:0;
   box-sizing: border-box;
 }
+/* FINE RESET */
 
 /* INIZIO REGOLE GENERALI */
 body {
@@ -47,7 +49,6 @@ ul{
   margin: auto;
   margin-top: 10px;
 }
-
 .col-sx-xs img {
   height: 100%;
 }
@@ -68,6 +69,7 @@ ul{
   float: left;
   width: 170px;
   height: 100%;
+  overflow: hidden;
 }
 .col-sx-md > .logo {
   padding-top: 20px;
@@ -102,15 +104,18 @@ ul{
 .col-sx-md .playlist {
   overflow-y: auto;
   width: 100%;
-  height: calc(100vh - 417px);/* NOTE: da modificare quando do altezza con altre cose */
+  height: calc(100vh - 417px);/* da modificare quando do altezza con altre cose */
 }
 .col-sx-md .playlist li:last-child {
   width: 100%;
   background-color: black;
 }
 .col-sx-md .user {
-  font-size: 14px;
+  font-size: 16px;
   padding: 0 10px;
+}
+.col-sx-md .user a {
+  font-size: 12px;
 }
 .col-sx-md .user img {
   height: 16px;
@@ -144,6 +149,7 @@ ul{
   right: 0;
 }
 .col-dx .nav button {
+  z-index: 200;
   margin-right: 20px;
   margin-top: 25px;
   padding: 5px 30px;
@@ -190,6 +196,9 @@ ul{
 .col-dx .content h4 {
   padding: 5px 0 0 10px;
 }
+.col-dx .content .box {
+  max-width: 180px;
+}
 .col-dx .content .box .titolo ,
 .col-dx .content .box .sottotitolo {
   padding: 5px 0;
@@ -202,7 +211,7 @@ ul{
 .row-content .box {
   text-align: center;
 }
-.row-content .box .img{
+.row-content .box .img {
   position: relative;
   width: 180px;
   height: 180px;
@@ -215,7 +224,8 @@ ul{
 .row-content:last-of-type .box img {
   border-radius: 50%;
 }
-/* per hover su img */
+
+/* inizio hover su img */
 .row-content .hover-play {
   display: none
 }
@@ -239,6 +249,7 @@ ul{
 .row-content:last-of-type .img:hover .hover-play {
   border-radius: 50%;
 }
+/* inizio hover su img */
 /* inizio col-dx */
 /* FINE MAIN */
 
@@ -330,7 +341,6 @@ footer {
 }
 .center .bot-player .riga-player:hover {
   cursor: pointer;
-
 }
 /* fine center */
 
@@ -386,6 +396,7 @@ footer {
   }
   .col-sx-xs {
     display: block;
+    overflow: hidden;
   }
   img {
     display: block;
@@ -396,6 +407,11 @@ footer {
   .col-dx .nav {
     left: 60px;
   }
+  .center li {
+    font-size: 12px;
+  }
+  .dx .riga-volume{
+    width: 60px;
+  }
 }
-
 /* FINE MEDIA QUERY */
