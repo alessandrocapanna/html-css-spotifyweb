@@ -134,6 +134,7 @@ ul{
   width: calc(100% - 170px);
 }
 .col-dx .nav {
+  z-index: 200;
   height: 80px;
   text-align: right;
   background-color: rgba(0, 0, 0, 0.5);
@@ -147,7 +148,7 @@ ul{
   margin-top: 25px;
   padding: 5px 30px;
   border-radius: 20px;
-  background-color: inherit;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 .col-dx .nav button:hover {
   transform: scale(1.1);
@@ -210,7 +211,6 @@ ul{
   width: 180px;
   height: 180px;
   padding: 10px;
-  cursor: pointer;
 }
 .row-content:last-of-type .box img {
   border-radius: 50%;
