@@ -196,30 +196,28 @@ ul{
 .col-dx .content h4 {
   padding: 5px 0 0 10px;
 }
-.col-dx .content .box {
-  max-width: 180px;
-}
-.col-dx .content .box .titolo ,
-.col-dx .content .box .sottotitolo {
-  padding: 5px 0;
-}
 .row-content {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
-.row-content .box {
+.col-dx .content .box { /* mettere larghezza flex percentuale con flex basis oppure meglio alle immagini */
+  flex-basis: 170px;
+  max-width: 210px;
+  flex-grow: 1;
+  margin: 10px;
   text-align: center;
+}
+.col-dx .content .box .titolo ,
+.col-dx .content .box .sottotitolo {
+  padding: 5px 0;
 }
 .row-content .box .img {
   position: relative;
-  width: 180px;
-  height: 180px;
+  max-width: 220px;
 }
 .row-content .box img {
-  width: 180px;
-  height: 180px;
-  padding: 10px;
+  width: 100%;
 }
 .row-content:last-of-type .box img {
   border-radius: 50%;
@@ -230,8 +228,8 @@ ul{
   display: none
 }
 .row-content .img:hover .hover-play {
-  width: 160px;
-  height: 160px;
+  width: 100%;
+  height: 100%;
   display: inherit;
   position: absolute;
   font-size: 50px;
@@ -249,8 +247,8 @@ ul{
 .row-content:last-of-type .img:hover .hover-play {
   border-radius: 50%;
 }
-/* inizio hover su img */
-/* inizio col-dx */
+/* fine hover su img */
+/* fine col-dx */
 /* FINE MAIN */
 
 /* INIZIO FOOTER */
