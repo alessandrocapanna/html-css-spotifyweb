@@ -106,9 +106,12 @@ ul{
   width: 100%;
   height: calc(100vh - 417px);/* da modificare quando do altezza con altre cose */
 }
-.col-sx-md .playlist li:last-child {
-  width: 100%;
-  background-color: black;
+.col-sx-md .playlist li {
+  color: grey;
+}
+.col-sx-md .playlist li:hover {
+  color: white;
+  cursor: pointer;
 }
 .col-sx-md .user {
   font-size: 16px;
@@ -202,11 +205,9 @@ ul{
   flex-wrap: wrap;
 }
 .col-dx .content .box { /* mettere larghezza flex percentuale con flex basis oppure meglio alle immagini */
-  flex-basis: 170px;
-  max-width: 210px;
-  flex-grow: 1;
-  margin: 10px;
+  padding: 10px;
   text-align: center;
+  flex-basis: calc(100% / 6);
 }
 .col-dx .content .box .titolo ,
 .col-dx .content .box .sottotitolo {
@@ -214,10 +215,11 @@ ul{
 }
 .row-content .box .img {
   position: relative;
-  max-width: 220px;
+  /* max-width: 220px; */
 }
 .row-content .box img {
   width: 100%;
+  height: 100%;
 }
 .row-content:last-of-type .box img {
   border-radius: 50%;
@@ -227,24 +229,23 @@ ul{
 .row-content .hover-play {
   display: none
 }
-.row-content .img:hover .hover-play {
+.row-content .box:hover .hover-play {
   width: 100%;
   height: 100%;
   display: inherit;
   position: absolute;
-  font-size: 50px;
-  transform: translate(-50% , -50%);
-  top: 50%;
-  left: 50%;
+  top: 0;
+  left: 0;
   background-color: rgba(0, 0, 0, 0.5);
 }
-.row-content .img:hover .hover-play i{
+.row-content .box:hover .hover-play i{
+  font-size: 50px;
   position: absolute;
   transform: translate(-50% , -50%);
   top: 50%;
   left: 50%;
 }
-.row-content:last-of-type .img:hover .hover-play {
+.row-content:last-of-type .box:hover .hover-play {
   border-radius: 50%;
 }
 /* fine hover su img */
@@ -388,6 +389,21 @@ footer {
 /* FINE FOOTER */
 
 /* INIZIO MEDIA QUERY */
+@media screen and (min-width: 969px) {
+  .col-dx .content .box {
+    max-width: calc(970px / 6)
+  }
+}
+@media screen and (max-width: 968px) {
+  .col-dx .content .box {
+    flex-basis: calc(100%/4);
+  }
+}
+@media screen and (max-width: 767px) {
+  .col-dx .content .box {
+    flex-basis: calc(100%/2);
+  }
+}
 @media screen and (max-width: 552px) {
   .col-sx-md  {
     display: none;
